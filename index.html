@@ -9,14 +9,21 @@
       href="./img/logos/favicon.png"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Quick'n'eat</title>
   </head>
   <body>
     <div class="navbar">
-      <img src="./img/logos/mainlogo_transparent.png" alt="logo" />
-      <span class="adress">Friedrich-Karl-Str. 11, 12103 Berlin</span>
-      <img src="./img/germany.png" alt="german" />
-      <img src="./img/gb1.png" alt="english" />
+      <a href="#">
+        <img src="./img/logos/mainlogo_transparent.png" alt="logo" />
+      </a>
+      <a href="#" class="adress">12103 Berlin</a>
+      <img class="language" src="./img/germany.png" alt="german" />
+      <img class="burgerMenu" src="./img/icons/menu.png" alt="burgerMenu" />
       <div class="burger-menu">
         <span class="burgerBtn"></span>
         <span class="burgerBtn"></span>
@@ -24,27 +31,58 @@
       </div>
     </div>
     <div class="content">
-      <div class="header">
-        <img src="./img/potatosoup.jpg" alt="food" />
-        <img
-          src="./img/logos/logo_transparent.png
-      "
-          alt="restaurant"
-        />
-        <h1>Berlins Ushi</h1>
-        <div class="icons">
-          <span>
-            <img src="./img/icons/zeitschnell.png" alt="uhr" /> 20-45 min
-          </span>
-          <span>
-            <img src="./img/icons/raketen-mittagessen.png" alt="rakete" />
-            Kostenlos
-          </span>
-          <span>
-            <img src="./img/icons/einkaufstasche.png" alt="warenkorb" /> Min.
-            9,90 €
-          </span>
+      <div class="restaurantCard">
+        <div class="header">
+          <img class="header-img" src="./img/potatosoup.jpg" alt="food" />
+          <img
+            class="restaurant-logo"
+            src="./img/logos/logo_transparent.png"
+            alt="restaurant"
+          />
+          <h1>Berlins Ushi</h1>
+          <div class="icons">
+            <span>
+              <img src="./img/icons/zeitschnell.png" alt="uhr" /> 20-45 min
+            </span>
+            <span>
+              <img src="./img/icons/raketen-mittagessen.png" alt="rakete" />
+              Kostenlos
+            </span>
+            <span>
+              <img src="./img/icons/einkaufstasche.png" alt="warenkorb" /> Min.
+              9,90 €
+            </span>
+          </div>
         </div>
+        <div class="soup" id="soup">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, eum!
+        </div>
+        <div class="nigiri" id="nigiri">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+          error.
+        </div>
+        <div class="maki" id="maki">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+          error.
+        </div>
+        <div class="insideout" id="insideout">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+          error.
+        </div>
+        <div class="dessert" id="dessert">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+          error.
+        </div>
+      </div>
+      <div class="shoppingCart">
+        <h3>Warenkorb</h3>
+        <hr />
+        <img src="./img/icons/einkaufstasche.png" alt="" />
+        <h4>Fülle deinen Warenkorb</h4>
+        <span
+          >Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
+          dein Essen.</span
+        >
       </div>
     </div>
 
