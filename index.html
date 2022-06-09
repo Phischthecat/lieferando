@@ -6,30 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./img/logos/favicon.png"
+      href="./img/icons/take-away(1).png"
       type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="shoppingCart.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Quick'n'eat</title>
+    <title>Berlins Ushi</title>
   </head>
   <body>
     <div class="navbar">
-      <a href="#">
-        <img src="./img/logos/mainlogo_transparent.png" alt="logo" />
-      </a>
-      <a href="#" class="adress">12103 Berlin</a>
-      <img class="language" src="./img/germany.png" alt="german" />
-      <img class="burgerMenu" src="./img/icons/menu.png" alt="burgerMenu" />
-      <div class="burger-menu">
-        <span class="burgerBtn"></span>
-        <span class="burgerBtn"></span>
-        <span class="burgerBtn"></span>
+      <div class="menu-left">
+        <img class="arrowLeft" src="./img/icons/left.png" alt="arrow left" />
+        <a class="header-logo-link" href="#">
+          <div class="header-logo-container">
+            <img
+              class="header-logo"
+              src="./img/icons/take-away.png"
+              alt="logo"
+            />
+            <p class="header-logo-paragraph">Quick'n'eat</p>
+          </div>
+        </a>
+      </div>
+      <a href="#" class="adress">Friedrich-Karl-Straße, 12103 Berlin</a>
+      <div class="menu-right">
+        <img class="language" src="./img/germany.png" alt="german" />
+        <img class="burgerMenu" src="./img/icons/menu.png" alt="burgerMenu" />
       </div>
     </div>
+
     <div class="content">
       <div class="restaurantCard">
         <div class="header">
@@ -40,6 +45,14 @@
             alt="restaurant"
           />
           <h1>Berlins Ushi</h1>
+          <div class="stars">
+            <img src="./img/icons/star.png" alt="star" />
+            <img src="./img/icons/star.png" alt="star" />
+            <img src="./img/icons/star.png" alt="star" />
+            <img src="./img/icons/star.png" alt="star" />
+            <img src="./img/icons/star.png" alt="star" />
+            <a href="#">(285 Bewertungen)</a>
+          </div>
           <div class="icons">
             <span>
               <img src="./img/icons/zeitschnell.png" alt="uhr" /> 20-45 min
@@ -49,46 +62,74 @@
               Kostenlos
             </span>
             <span>
-              <img src="./img/icons/einkaufstasche.png" alt="warenkorb" /> Min.
-              9,90 €
+              <img
+                class="bag"
+                src="./img/icons/einkaufstasche2.png"
+                alt="warenkorb"
+              />
+              Min. 9,90 €
             </span>
           </div>
         </div>
-        <div class="soup" id="soup">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, eum!
-        </div>
-        <div class="nigiri" id="nigiri">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-          error.
-        </div>
-        <div class="maki" id="maki">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-          error.
-        </div>
-        <div class="insideout" id="insideout">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-          error.
-        </div>
-        <div class="dessert" id="dessert">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-          error.
+        <div class="foodSections-container">
+          <div class="foodSections soup" id="soup">
+            <div class="header-sections">
+              <h2>Beliebte Gerichte</h2>
+            </div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, eum!
+          </div>
+          <div class="foodSections nigiri" id="nigiri">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            error.
+          </div>
+          <div class="foodSections maki" id="maki">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            error.
+          </div>
+          <div class="foodSections insideout" id="insideout">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            error.
+          </div>
+          <div class="foodSections dessert" id="dessert">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
+            error.
+          </div>
         </div>
       </div>
       <div class="shoppingCart">
-        <h3>Warenkorb</h3>
-        <hr />
-        <img src="./img/icons/einkaufstasche.png" alt="" />
-        <h4>Fülle deinen Warenkorb</h4>
-        <span
-          >Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
-          dein Essen.</span
-        >
+        <div class="h3-box">
+          <h3>Warenkorb</h3>
+        </div>
+        <div class="cartContent">
+          <img src="./img/icons/einkaufstasche.png" alt="" />
+          <h4>Fülle deinen Warenkorb</h4>
+          <p>
+            Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
+            dein Essen.
+          </p>
+        </div>
       </div>
     </div>
+    <footer>
+      <p>hier entsteht der Footer</p>
+      <a href="#">Kontakt</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </footer>
 
     <!--
       Impressum Verlinkung für Logos
       Uicons von <a href="https://www.flaticon.com/uicons">Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/delivery" 
+      title="delivery icons">Delivery icons created by Irvan Kurnianto - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/food-delivery" 
+      title="food-delivery icons">Food-delivery icons created by iconixar - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/back" 
+      title="back icons">Back icons created by Arkinasi - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/einkaufstasche" 
+      title="einkaufstasche Icons">Einkaufstasche Icons erstellt von uicon - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/star" 
+      title="star Icons">Star Icons erstellt von Smashicons - Flaticon</a>
     -->
   </body>
 </html>

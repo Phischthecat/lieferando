@@ -1,55 +1,209 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
+:root {
+  --main-color: #fb6100;
+  --main-bg-color: #f8f5f2;
+  --main-text-color: #0a3847;
+  --main-icon-color: #666666;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
 body {
   font-family: 'PT Sans', sans-serif;
-}
-
-.navbar {
-  background-color: #fb6100;
+  color: var(--main-text-color);
 }
 
 .content {
   display: flex;
 }
 
-.shoppingCart {
-  border: 1px solid black;
-  width: 25%;
+/* ------------------------------------------------------------------------------
+
+                                        NAVBAR
+
+--------------------------------------------------------------------------------- */
+
+.navbar {
+  background-color: var(--main-color);
+  height: 4.5rem;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.menu-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.arrowLeft {
+  height: 20px;
+  filter: invert();
+  margin-right: 10px;
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+  width: 40px;
+  filter: invert();
+  vertical-align: middle;
+}
+
+.header-logo-link {
+  text-decoration: none;
+  color: white;
+}
+
+.header-logo-paragraph {
+  font-size: 20px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+}
+
+.adress {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.menu-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.language {
+  height: 25px;
+  width: 25px;
+
+  margin: 25px;
+
+  border-radius: 100%;
+  border: 3px solid white;
+}
+
+.burgerMenu {
+  height: 20px;
+  width: 20px;
+  filter: invert();
+}
+
+/* ------------------------------------------------------------------------------
+
+                                        HEADER
+
+--------------------------------------------------------------------------------- */
 
 .restaurantCard {
   border: 1px solid black;
-  width: 75%;
+  width: 100%;
 }
 
 .header {
   position: relative;
+  padding-bottom: 30px;
 }
 
 .header-img {
   width: 100%;
   height: 200px;
+  object-fit: cover;
 }
 
 .restaurant-logo {
   position: absolute;
   top: calc(200px - (120px / 2));
-  left: 50%;
-  height: 120px;
-  width: 120px;
+  left: 44.5%;
+  height: 130px;
+  width: 130px;
   background-color: rgb(94, 94, 94);
   border-radius: 100%;
-  border: 3px solid lightgray;
+  border: 2px solid lightgray;
+}
+
+h1 {
+  font-size: 1.5rem;
+  padding: 10px 50px 5px;
+}
+
+.stars {
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+}
+
+.stars img {
+  padding-right: 5px;
+  height: 16px;
+}
+
+.stars a {
+  margin-left: 3.5px;
+  font-size: 14.5px;
+  color: var(--main-color);
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 20px;
+  padding: 25px 50px;
+  color: var(--main-icon-color);
+}
+
+.icons img {
+  height: 17px;
+  width: 17px;
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.icons span {
+  font-size: 14px;
+  padding-right: 15px;
+}
+
+/* ------------------------------------------------------------------------------
+
+                              FOOD SECTIONS
+
+--------------------------------------------------------------------------------- */
+
+.foodSections-container {
+  padding: 0 50px;
+}
+
+.foodSections {
+  height: 30vh;
+}
+
+.header-sections {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: var(--main-bg-color);
+}
+
+h2 {
+  color: #0a3847;
+  font-size: 18px;
+  font-weight: 600;
 }
