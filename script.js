@@ -16,3 +16,5 @@ function updateBasket() {
   document.getElementById('sum').innerHTML = sum;
   document.getElementById('finalSum').innerHTML = finalSum;
 }
+
+function render() {}

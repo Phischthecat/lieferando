@@ -207,3 +207,17 @@ h2 {
   font-size: 18px;
   font-weight: 600;
 }
+
+/* ------------------------------------------------------------------------------
+
+                              IMPRESSUM Restaurant
+
+--------------------------------------------------------------------------------- */
+
+.impressumRestaurant {
+  padding: 15px 50px;
+}
+
+.impressumRestaurant h2 {
+  padding: 10px 0;
+}
