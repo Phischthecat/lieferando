@@ -11,9 +11,11 @@
     />
     <link rel="stylesheet" href="shoppingCart.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="./dishes.js"></script>
+    <script src="./script.js"></script>
     <title>Berlins Ushi</title>
   </head>
-  <body>
+  <body onload="render();">
     <div class="navbar">
       <div class="menu-left">
         <img class="arrowLeft" src="./img/icons/left.png" alt="arrow left" />
@@ -71,32 +73,7 @@
             </span>
           </div>
         </div>
-        <div class="foodSections-container">
-          <div class="foodSections soup" id="soup">
-            <div class="header-sections">
-              <h2>Beliebte Gerichte</h2>
-              <span id="extraInfo"></span>
-            </div>
-
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, eum!
-          </div>
-          <div class="foodSections nigiri" id="nigiri">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-            error.
-          </div>
-          <div class="foodSections maki" id="maki">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-            error.
-          </div>
-          <div class="foodSections insideout" id="insideout">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-            error.
-          </div>
-          <div class="foodSections dessert" id="dessert">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus,
-            error.
-          </div>
-        </div>
+        <div class="foodSections-container" id="food"></div>
       </div>
       <div class="shoppingCart">
         <div class="h3-box">
@@ -150,6 +127,8 @@
       title="einkaufstasche Icons">Einkaufstasche Icons erstellt von uicon - Flaticon</a>
       <a href="https://www.flaticon.com/de/kostenlose-icons/star" 
       title="star Icons">Star Icons erstellt von Smashicons - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/plus" 
+      title="plus icons">Plus icons created by IconKanan - Flaticon</a>
     -->
   </body>
 </html>

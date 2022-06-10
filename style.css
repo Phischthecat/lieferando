@@ -4,7 +4,10 @@
   --main-color: #fb6100;
   --main-bg-color: #f8f5f2;
   --main-text-color: #0a3847;
+  --main-text2-color: #8d8d8d;
   --main-icon-color: #666666;
+  --main-border-color: #ebebeb;
+  --main-hover-color: rgb(20, 110, 235);
 }
 
 * {
@@ -112,7 +115,6 @@ body {
 --------------------------------------------------------------------------------- */
 
 .restaurantCard {
-  border: 1px solid black;
   width: 100%;
 }
 
@@ -135,7 +137,7 @@ body {
   width: 130px;
   background-color: rgb(94, 94, 94);
   border-radius: 100%;
-  border: 2px solid lightgray;
+  border: 2px solid var(--main-border-color);
 }
 
 h1 {
@@ -203,9 +205,84 @@ h1 {
 }
 
 h2 {
-  color: #0a3847;
   font-size: 18px;
   font-weight: 600;
+}
+
+.extraInfo {
+  font-size: 12px;
+}
+
+.dish-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin: 10px 0;
+  padding: 15px;
+
+  height: 150px;
+
+  border: 1px solid var(--main-border-color);
+  transition: all 200ms ease-in-out;
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+
+.dish-box:hover {
+  border: 1px solid var(--main-hover-color);
+  transition: all 200ms ease-in-out;
+}
+
+.dish-name {
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.dish-info {
+  font-size: 14px;
+  color: var(--main-text2-color);
+}
+
+.dish-price {
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.dish-list {
+  padding-left: 15px;
+  font-size: 14px;
+  color: var(--main-text2-color);
+}
+
+.plusSign {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  border-left: 2px solid var(--main-border-color);
+  border-bottom: 2px solid var(--main-border-color);
+  border-radius: 3px;
+}
+
+.plusSign a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.plusSign a img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  filter: brightness(0.65);
 }
 
 /* ------------------------------------------------------------------------------
