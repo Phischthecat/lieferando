@@ -49,7 +49,7 @@
             src="./img/logos/logo_transparent.png"
             alt="restaurant"
           />
-          <h1>Berlins Ushi</h1>
+          <h1 id="restaurantName">Berlins Ushi</h1>
           <div class="stars">
             <img src="./img/icons/star.png" alt="star" />
             <img src="./img/icons/star.png" alt="star" />
@@ -60,19 +60,27 @@
           </div>
           <div class="icons">
             <span>
-              <img src="./img/icons/zeitschnell.png" alt="uhr" /> 20-45 min
+              <img src="./img/icons/zeitschnell.png" alt="uhr" />
+              <div id="deliveryTime">20-45</div>
+              min
             </span>
-            <span>
-              <img src="./img/icons/raketen-mittagessen.png" alt="rakete" />
-              Kostenlos
+            <span class="green">
+              <img
+                class="deliver"
+                src="./img/icons/fahrrad2.png"
+                alt="lieferung"
+              />
+              <div id="deliveryFee">Kostenlos</div>
             </span>
             <span>
               <img
                 class="bag"
-                src="./img/icons/einkaufstasche2.png"
+                src="./img/icons/einkaufstasche.png"
                 alt="warenkorb"
               />
-              Min. 9,90 €
+              Min.
+              <div id="minOrder">9,9</div>
+              0 €
             </span>
           </div>
         </div>
@@ -112,14 +120,9 @@
         <div class="h3-box">
           <h3>Warenkorb</h3>
         </div>
-        <div id="cartContent" class="cartContent">
-          <!-- <img src="./img/icons/einkaufstasche.png" alt="" />
-          <h4>Fülle deinen Warenkorb</h4>
-          <p>
-            Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
-            dein Essen.
-          </p> -->
-        </div>
+        <div id="cartContent" class="cartContent"></div>
+        <div id="infos"></div>
+        <div id="totalPrice"></div>
       </div>
     </div>
 
@@ -151,8 +154,18 @@
       title="einkaufstasche Icons">Einkaufstasche Icons erstellt von uicon - Flaticon</a>
       <a href="https://www.flaticon.com/de/kostenlose-icons/star" 
       title="star Icons">Star Icons erstellt von Smashicons - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/plus" 
-      title="plus icons">Plus icons created by IconKanan - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/plus" 
+      title="plus Icons">Plus Icons erstellt von Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/minus" 
+      title="minus- Icons">Minus- Icons erstellt von Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/schnell" 
+      title="schnell Icons">Schnell Icons erstellt von kornkun - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/versand-und-lieferung" 
+      title="versand und lieferung Icons">Versand und lieferung Icons erstellt von fulmal - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/fahrrad" 
+      title="fahrrad Icons">Fahrrad Icons erstellt von Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/de/kostenlose-icons/radfahren" 
+      title="radfahren Icons">Radfahren Icons erstellt von KP Arts - Flaticon</a>
     -->
   </body>
 </html>
