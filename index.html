@@ -11,8 +11,10 @@
     />
     <link rel="stylesheet" href="shoppingCart.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
     <script src="./dishes.js"></script>
     <script src="./script.js"></script>
+    <script src="./shoppingCart.js"></script>
     <title>Berlins Ushi</title>
   </head>
   <body onload="render();">
@@ -32,16 +34,23 @@
       </div>
       <a href="#" class="adress">Friedrich-Karl-Straße, 12103 Berlin</a>
       <div class="menu-right">
-        <img class="language" src="./img/germany.png" alt="german" />
+        <img
+          id="language"
+          class="language"
+          src="./img/germany.png"
+          alt="german"
+        />
+        <!-- onmouseover="this.style.cursor='pointer'"
+          onclick="changeimg()" -->
         <img class="burgerMenu" src="./img/icons/menu.png" alt="burgerMenu" />
       </div>
     </div>
 
     <div class="content">
       <div class="restaurantCard">
-        <div class="button-up">
-          <a href="#"><img src="./img/icons/left.png" alt="" /></a>
-        </div>
+        <button class="button-up" id="myBtn" onclick="topFunction()">
+          <img src="./img/icons/left.png" alt="" />
+        </button>
         <div class="header">
           <img class="header-img" src="./img/header.jpg" alt="food" />
           <img
@@ -49,39 +58,41 @@
             src="./img/logos/logo_transparent.png"
             alt="restaurant"
           />
-          <h1 id="restaurantName">Berlins Ushi</h1>
-          <div class="stars">
-            <img src="./img/icons/star.png" alt="star" />
-            <img src="./img/icons/star.png" alt="star" />
-            <img src="./img/icons/star.png" alt="star" />
-            <img src="./img/icons/star.png" alt="star" />
-            <img src="./img/icons/star.png" alt="star" />
-            <a href="#">(285 Bewertungen)</a>
-          </div>
-          <div class="icons">
-            <span>
-              <img src="./img/icons/zeitschnell.png" alt="uhr" />
-              <div id="deliveryTime">20-45</div>
-              min
-            </span>
-            <span class="green">
-              <img
-                class="deliver"
-                src="./img/icons/fahrrad2.png"
-                alt="lieferung"
-              />
-              <div id="deliveryFee">Kostenlos</div>
-            </span>
-            <span>
-              <img
-                class="bag"
-                src="./img/icons/einkaufstasche.png"
-                alt="warenkorb"
-              />
-              Min.
-              <div id="minOrder">9,9</div>
-              0 €
-            </span>
+          <div class="restaurantOverview">
+            <h1 id="restaurantName">Berlins Ushi</h1>
+            <div class="stars">
+              <img src="./img/icons/star.png" alt="star" />
+              <img src="./img/icons/star.png" alt="star" />
+              <img src="./img/icons/star.png" alt="star" />
+              <img src="./img/icons/star.png" alt="star" />
+              <img src="./img/icons/star.png" alt="star" />
+              <a href="#">(285 Bewertungen)</a>
+            </div>
+            <div class="icons">
+              <span>
+                <img src="./img/icons/zeitschnell.png" alt="uhr" />
+                <div id="deliveryTime">20-45</div>
+                min
+              </span>
+              <span class="green">
+                <img
+                  class="deliver"
+                  src="./img/icons/fahrrad2.png"
+                  alt="lieferung"
+                />
+                <div id="deliveryFee">Kostenlos</div>
+              </span>
+              <span>
+                <img
+                  class="bag"
+                  src="./img/icons/einkaufstasche.png"
+                  alt="warenkorb"
+                />
+                Min.
+                <div id="minOrder">9,9</div>
+                0 €
+              </span>
+            </div>
           </div>
         </div>
 

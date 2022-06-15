@@ -1,0 +1,82 @@
+@media screen and (max-width: 1385px) {
+  .restaurantOverview,
+  .foodSections-container,
+  .impressumRestaurant,
+  .food-navbar {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  h1 {
+    padding-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 1105px) {
+  .restaurantOverview {
+    padding-top: 50px;
+  }
+
+  .shoppingCart {
+    display: none;
+  }
+
+  .button-up {
+    right: 20px;
+  }
+
+  .icons span {
+    font-size: 12px;
+  }
+
+  footer .links {
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .links a {
+    padding: 15px 0;
+  }
+
+  footer p {
+    padding: 20px 0;
+  }
+}
+
+@media screen and (max-width: 955px) {
+  .header-img {
+    height: 112px;
+  }
+
+  .restaurant-logo {
+    top: calc(112px - (100px / 2));
+
+    height: 105px;
+    width: 105px;
+  }
+
+  .restaurantOverview {
+    padding-top: 35px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header-logo-paragraph {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  .icons {
+    justify-content: center;
+  }
+
+  .restaurant-logo {
+    right: 0;
+    left: 35%;
+    height: 90px;
+    width: 90px;
+  }
+}

@@ -82,6 +82,7 @@ body {
 }
 
 .header-logo-paragraph {
+  display: inline;
   font-size: 20px;
   font-family: 'PT Sans', sans-serif;
   font-weight: 700;
@@ -93,6 +94,14 @@ body {
   text-decoration: none;
   color: white;
   border-bottom: 2px solid white;
+
+  margin: 0 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: 60%;
 }
 
 .menu-right {
@@ -150,15 +159,21 @@ body {
   border: 2px solid var(--main-border-color);
 }
 
+.restaurantOverview {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 1rem;
+}
+
 h1 {
-  font-size: 25px;
-  padding: 10px 50px 5px;
+  font-size: 24px;
 }
 
 .stars {
-  padding: 0 50px;
   display: flex;
   align-items: center;
+  margin: 5px 0;
 }
 
 .stars img {
@@ -176,8 +191,9 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 20px;
-  padding: 25px 50px;
+  flex-wrap: wrap;
+  min-height: 20px;
+  margin: 10px 0;
   color: var(--main-icon-color);
 }
 
@@ -186,11 +202,11 @@ h1 {
 
   margin-left: 5px;
   margin-right: 5px;
-  vertical-align: middle;
 }
 
 .icons span {
   display: flex;
+  align-items: center;
   font-size: 14px;
   padding-right: 15px;
 }
@@ -214,8 +230,8 @@ h1 {
   top: 0;
   left: 0;
   right: 0;
-  padding: 15px 50px 15px;
-  margin: 15px 0;
+  padding: 15px 0;
+  margin: 15px auto;
   width: 100%;
   background-color: var(--main-bg-color);
 
@@ -224,11 +240,15 @@ h1 {
   align-items: center;
 
   white-space: nowrap;
+  overflow: auto;
   z-index: 300;
 }
 
 .food-navbar ul {
   list-style-type: none;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .food-navbar li {
@@ -249,6 +269,13 @@ h1 {
   transition: 75ms ease-in-out;
 }
 
+.food-navbar a .active {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 16px;
+  transition: 75ms ease-in-out;
+}
+
 /* ------------------------------------------------------------------------------
 
                               FOOD SECTIONS
@@ -256,7 +283,9 @@ h1 {
 --------------------------------------------------------------------------------- */
 
 .foodSections-container {
-  padding: 0 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .foodSections {
@@ -286,7 +315,7 @@ h2 {
   margin: 10px 0;
   padding: 15px;
 
-  height: 150px;
+  min-height: 150px;
 
   border: 1px solid var(--main-border-color);
   transition: all 200ms ease-in-out;
@@ -306,6 +335,7 @@ h2 {
 }
 
 .dish-info {
+  width: 70%;
   font-size: 14px;
   color: var(--main-text2-color);
 }
@@ -314,6 +344,8 @@ h2 {
   color: var(--main-color);
   font-weight: 700;
   font-size: 18px;
+
+  padding-top: 10px;
 }
 
 .dish-list {
@@ -353,22 +385,20 @@ h2 {
 .button-up {
   position: fixed;
   bottom: 15px;
-  right: 360px;
+  right: 370px;
   background-color: #fff;
   border-radius: 100%;
   height: 60px;
   width: 60px;
 
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
   transform: rotate(90deg);
   box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
-
-.button-up a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  z-index: 601;
 }
 
 .button-up:hover {
@@ -383,8 +413,10 @@ h2 {
 --------------------------------------------------------------------------------- */
 
 .impressumRestaurant {
-  padding: 15px 50px;
-  margin-bottom: 130px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .impressumRestaurant h2 {
@@ -401,15 +433,12 @@ h2 {
 
 --------------------------------------------------------------------------------- */
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 130px;
+  min-height: 130px;
   width: 100%;
   background-color: var(--main-text-color);
   color: white;
@@ -427,4 +456,8 @@ footer {
   padding: 10px;
   text-decoration: none;
   color: white;
+}
+
+.links a:hover {
+  text-decoration: underline;
 }
