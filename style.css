@@ -7,7 +7,7 @@
   --main-text2-color: #8d8d8d;
   --main-icon-color: #666666;
   --main-border-color: #ebebeb;
-  --main-hover-color: rgb(20, 110, 235);
+  --main-hover-color: #125fca;
   --shoppingCartParagraph: #999;
 }
 
@@ -229,7 +229,6 @@ h1 {
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
   padding: 15px 0;
   margin: 15px auto;
   width: 100%;
@@ -331,6 +330,7 @@ h2 {
 
 .dish-name {
   font-size: 18px;
+  padding-right: 30px;
   padding-bottom: 5px;
 }
 
@@ -385,7 +385,7 @@ h2 {
 .button-up {
   position: fixed;
   bottom: 15px;
-  right: 370px;
+  right: calc(348px + 20px);
   background-color: #fff;
   border-radius: 100%;
   height: 60px;
@@ -398,7 +398,7 @@ h2 {
 
   transform: rotate(90deg);
   box-shadow: 3px 0 7px rgba(0, 0, 0, 0.3);
-  z-index: 601;
+  z-index: 602;
 }
 
 .button-up:hover {

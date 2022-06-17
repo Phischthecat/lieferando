@@ -8,20 +8,11 @@ function renderBasket() {
   let basket = document.getElementById('cartContent');
   if (names.length == 0) {
     clearCart();
-    basket.innerHTML = createBasket();
+    basket.innerHTML = createEmptyBasket();
   } else {
     clearCart();
     renderFullBasket();
   }
-}
-
-function clearCart() {
-  let basket = document.getElementById('cartContent');
-  let infos = document.getElementById('infos');
-  let totalPrice = document.getElementById('totalPrice');
-  basket.innerHTML = '';
-  infos.innerHTML = '';
-  totalPrice.innerHTML = '';
 }
 
 function renderFullBasket() {
@@ -46,6 +37,7 @@ function addToBasket(name, price) {
   }
   renderBasket();
   updateBasket();
+  addTotalAmount();
 }
 
 function removeFromBasket(i) {
@@ -55,9 +47,12 @@ function removeFromBasket(i) {
     amounts.splice(i, 1);
     names.splice(i, 1);
     prices.splice(i, 1);
+    document.getElementById('amountCart').innerHTML = '0';
+    document.getElementById('total3').innerHTML = '0,00 €';
   }
   renderBasket();
   updateBasket();
+  addTotalAmount();
 }
 
 function updateBasket() {
@@ -67,112 +62,35 @@ function updateBasket() {
   }
   let diff = +minOrderValue - +sum;
   let finalSum = +sum + +deliveryFee;
-  document.getElementById('subtotal').innerHTML =
-    sum.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('total').innerHTML =
-    finalSum.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('total2').innerHTML =
-    finalSum.toFixed(2).replace('.', ',') + ' €';
+  updateInnerHTML('subtotal', sum);
+  updateInnerHTML('total', finalSum);
+  updateInnerHTML('total2', finalSum);
+  updateInnerHTML('total3', finalSum);
+
   if (diff <= 0) {
-    document.getElementById('minOrderValueId').classList.add('d-none');
-    document.getElementById('orderButton').classList.add('blue');
+    classListAdd('minOrderValueId', 'd-none');
+    classListAdd('orderButton', 'blue');
   } else {
-    document.getElementById('minOrderValueDiff').innerHTML =
-      diff.toFixed(2).replace('.', ',') + ' €';
+    updateInnerHTML('minOrderValueDiff', diff);
   }
 }
 
-function createBasket() {
-  return /*html*/ `
-  <div class="emptyBasket">
-        <img src="./img/icons/einkaufstasche.png" alt="" />
-        <h4>Fülle deinen Warenkorb</h4>
-        <p>
-          Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle
-          dein Essen.
-        </p>
-      </div>
-      `;
+function openBasket() {
+  document.body.style.setProperty('overflow', 'hidden');
+  document.getElementById('cartContent').style.setProperty('overflow', 'auto');
+  document
+    .getElementById('shoppingCart')
+    .style.setProperty('display', 'inline-flex');
+  document.getElementById('navbar').style.setProperty('z-index', '0');
+  document.getElementById('buttons').style.setProperty('display', 'none');
 }
 
-function createFullBasket(i) {
-  const amount = amounts[i];
-  const name = names[i];
-  const price = prices[i];
-  const itemPrice = +price * +amount;
-
-  return /*html*/ `
-  <div class="basketContent"> 
-    <div class="container-basket">       
-      <div class="singleAmount">
-          <strong>${amount}</strong>
-      </div>
-      <div class="singleName">
-        <strong >${name}</strong> 
-      </div>
-      <div class="singlePrice">
-        ${itemPrice.toFixed(2).replace('.', ',')} €
-      </div>     
-    </div>
-    <div class="editAmount">
-      <a href="#" onclick="openNoteBasket('${i}')">Anmerkungen hinzufügen</a>
-      <div class="in-decrease">
-        <div 
-        onclick="removeFromBasket('${i}')">
-          <img  src="./img/icons/entfernen.png" alt="">
-        </div>
-        <div onclick="addToBasket('${name}', '${price}')">
-          <img  src="./img/icons/hinzufugen.png" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="note-container" id="note-container${i}"></div>
-    <div id="editNote${i}" class="editNote d-none">      
-        <textarea name="note" id="notes${i}" cols="30" rows="10"></textarea>
-        <span role="button" onclick="cancelNoteBasket('${i}')">
-          Abbrechen
-        </span>
-        <span role="button" onclick="addNoteBasket('${i}')">Hinzufügen</span>
-      </div>
-  </div>`;
-}
-
-function createInfos() {
-  return /*html*/ `
-    <div id="minOrderValueId">
-      <div class="minOrderValue" >      
-        <p>Benötigter Betrag, um den Mindestbestellwert zu erreichen</p>
-        <div id="minOrderValueDiff"></div>      
-      </div>
-      <div class="minOrderInfo">
-        <p>Leider kannst du noch nicht bestellen. Berlins Ushi liefert erst 
-            ab einem Mindestbestellwert von 9,90 € (exkl. Lieferkosten).
-        </p>
-      </div>
-    </div>
-  `;
-}
-
-function createTotalPrice() {
-  return /*html*/ `
-  <div class="totalPrice">
-    <div class="subtotal">
-      <span>
-      Zwischensumme
-    </span>  
-    <span id="subtotal"></span>
-    </div>
-    <div class="deliveryFee">
-      <span>Lieferkosten</span>
-      <span>Kostenlos</span>
-    </div>
-    <div class="total">
-      <strong>Gesamt</strong>
-      <strong id="total"></strong>
-    </div>
-    <button id="orderButton" class="orderButton" onclick="construction();">Bezahlen (<span id="total2"></span>)</button>
-  </div>
-  `;
+function closeBasket() {
+  document.getElementById('shoppingCart').style.setProperty('display', 'none');
+  document.body.style.setProperty('overflow', 'auto');
+  document
+    .getElementById('buttons')
+    .style.setProperty('display', 'inline-flex');
 }
 
 function openNoteBasket(i) {
@@ -188,6 +106,32 @@ function addNoteBasket(i) {
   let noteContainer = document.getElementById(`note-container${i}`);
   noteContainer.innerHTML = note.value;
   cancelNoteBasket(i);
+}
+
+function addTotalAmount() {
+  let ergebnis = 0;
+  for (let i = 0; i < amounts.length; i++) {
+    ergebnis += amounts[i];
+  }
+  document.getElementById('amountCart').innerHTML = ergebnis;
+}
+
+function clearCart() {
+  document.getElementById('cartContent').innerHTML = '';
+  document.getElementById('infos').innerHTML = '';
+  document.getElementById('totalPrice').innerHTML = '';
+}
+
+function updateInnerHTML(id, x) {
+  document.getElementById(id).innerHTML = x.toFixed(2).replace('.', ',') + ' €';
+}
+
+function classListAdd(id, className) {
+  document.getElementById(id).classList.add(className);
+}
+
+function classListRemove(id, className) {
+  document.getElementById(id).classList.remove(className);
 }
 
 function construction() {
